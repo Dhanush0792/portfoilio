@@ -12,6 +12,8 @@ import { ButtonMovingBorder } from '../components/MovingBorderButton';
 import ProjectSection from '../components/ProjectSection';
 import Contact from '../components/Contact';
 import { useTheme } from '../contexts/ThemeContext';
+import CyberTerminal from '../components/CyberTerminal';
+import MemoryGraph from '../components/MemoryGraph';
 
 const Home = () => {
     const { theme } = useTheme();
@@ -78,8 +80,8 @@ const Home = () => {
                     <motion.div initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}>
                         <GradientText colors={["#a78bfa", "#6d28d9", "#00ffd0", "#6d28d9", "#a78bfa"]} animationSpeed={4} className="custom-class font-cascadia font-bold" />
                     </motion.div>
-                    <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55, ease: "easeOut" }}>
-                        <TextGenerateEffect words={'I craft production-ready AI infrastructure, SaaS applications, and robust web solutions built to solve real-world problems.'} />
+                    <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.55, ease: "easeOut" }} className="w-full mt-4">
+                        <CyberTerminal />
                     </motion.div>
                     <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}>
                         <Skills />
@@ -143,6 +145,11 @@ const Home = () => {
                         <p className="dark:text-white/80 text-slate-600 leading-relaxed mt-4 font-cascadia text-justify">
                             I am a Full-Stack Developer, AI Developer, and SaaS Builder currently pursuing a Bachelor of Technology in Electronics and Communication Engineering (ECE) at Sri Venkateswara College of Engineering (SVCE). I specialize in designing robust backend systems, building long-term memory infrastructure for AI workflows, and scaling MVPs into successful product ventures.
                         </p>
+                        
+                        <div className="mt-8">
+                            <MemoryGraph />
+                        </div>
+                        
                         <div className="my-6 dark:bg-slate-900/50 bg-slate-50 border-l-4 dark:border-[#00ffd0] border-violet-600 p-4 rounded-r-lg italic dark:text-white/70 text-slate-700 font-cascadia dark:shadow-none shadow-md">
                             "Build AI systems that solve real problems, automate workflows, and create scalable SaaS ventures."
                         </div>
