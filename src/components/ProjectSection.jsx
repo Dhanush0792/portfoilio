@@ -69,7 +69,7 @@ const dummyProjects = [
     description: "A sleep monitoring companion and coach designed to analyze sleep cycles, offer behavioral coaching, and support digital wellbeing.",
     tech: ["React Native", "TailwindCSS", "Node.js"],
     link: "#",
-    image: "https://images.unsplash.com/photo-1511295742364-92767fa62d9f?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2070&auto=format&fit=crop",
     category: "Web/Apps",
     status: "Coming Soon"
   }
@@ -532,7 +532,7 @@ function ProjectSection() {
         tech: p.tags || [],
         link: p.demo_url || p.github_url || '#', // Use demo_url as primary link
         github: p.github_url, // Add specific github field
-        image: p.image_url,
+        image: p.image_url || 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2070&auto=format&fit=crop',
         category: 'Database', // All DB projects in one category
         featured: p.featured || false
       };
@@ -543,13 +543,8 @@ function ProjectSection() {
 
   console.log('🔄 Transformed projects:', transformedProjects.length);
 
-  // Filter projects by category (only applies to static dummy data)
-  const filteredProjects = transformedProjects.filter((p) => {
-    // If from database (has category 'Database'), show all
-    if (p.category === 'Database') return true;
-    // For dummy data, filter by selected category
-    return p.category === projectCategory;
-  });
+  // Filter projects by category (show all since category tabs are removed)
+  const filteredProjects = transformedProjects;
 
   console.log('✨ Filtered projects to display:', filteredProjects.length);
 
@@ -638,13 +633,7 @@ function ProjectSection() {
             >
               {activeTab === 'Projects' && (
                 <>
-                  {/* Only show category buttons for dummy data */}
-                  {projectsFromDB.length === 0 && (
-                    <div className="flex justify-center gap-4 mb-8">
-                      <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'Web/Apps' ? 'bg-violet-700/80 text-white border-violet-400 shadow-violet-500/10 shadow-lg' : 'bg-slate-900/60 text-violet-200 border-slate-700 hover:bg-violet-800/40 hover:text-white'}`} onClick={() => setProjectCategory('Web/Apps')}>Web/Apps</button>
-                      <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === '3D Design' ? 'bg-violet-700/80 text-white border-violet-400 shadow-violet-500/10 shadow-lg' : 'bg-slate-900/60 text-violet-200 border-slate-700 hover:bg-violet-800/40 hover:text-white'}`} onClick={() => setProjectCategory('3D Design')}>3D Design</button>
-                    </div>
-                  )}
+                  {/* Category buttons removed to show all projects together */}
 
                   {loadingProjects ? (
                     <div className="flex justify-center py-12">
