@@ -10,7 +10,6 @@ import FloatingThemeToggle from './components/FloatingThemeToggle';
 
 // Pages
 import Home from './pages/Home';
-import Gallery from './pages/Gallery';
 
 function App() {
   const { theme } = useTheme();
@@ -25,7 +24,6 @@ function App() {
             <Squares
               speed={0.2}
               squareSize={35}
-              direction="diagonal"
               borderColor={theme === 'dark' ? "rgba(255, 255, 255, 0.03)" : "rgba(15, 23, 42, 0.05)"}
               hoverFillColor={theme === 'dark' ? "rgba(31, 137, 187, 0.53)" : "rgba(8, 145, 178, 0.1)"}
               gradientColorStart={theme === 'dark' ? "#000428" : "#f1f5f9"}
@@ -39,7 +37,6 @@ function App() {
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />
-              <Route path="/gallery" element={<Gallery />} />
             </Routes>
           </AnimatePresence>
 
