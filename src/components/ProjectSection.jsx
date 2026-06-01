@@ -23,41 +23,55 @@ const dummyProjects = [
     title: "AI Memory SDK",
     description: "Production-grade memory infrastructure designed to inject dynamic, long-term memory capabilities into AI applications, featuring FastAPI, PostgreSQL, Supabase, JWT, and context engineering loops.",
     tech: ["Python", "FastAPI", "PostgreSQL", "Supabase"],
-    link: "https://github.com/Dhanush0792",
+    link: "https://ai-memorysdk.netlify.app/",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2064&auto=format&fit=crop",
     category: "Web/Apps",
+    status: "Live"
   },
   {
     title: "Aria — AI Productivity Platform",
     description: "An intelligent task management and productivity application focused on helping users organize work, manage tasks, and improve daily execution through an AI-enhanced mobile experience.",
     tech: ["React", "TailwindCSS", "Node.js", "MongoDB"],
-    link: "https://github.com/Dhanush0792",
+    link: "#",
     image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop",
     category: "Web/Apps",
+    status: "Under Development"
   },
   {
     title: "Stira — Behavioral Intelligence",
     description: "A data-driven platform designed to analyze behavioral patterns, user actions, habits, and interaction data to generate meaningful, personalized recommendations.",
     tech: ["Python", "FastAPI", "PostgreSQL", "Supabase"],
-    link: "https://github.com/Dhanush0792",
+    link: "#",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
     category: "Web/Apps",
+    status: "Under Development"
   },
   {
     title: "Unscrollr — Digital Wellbeing",
     description: "A mobile application designed to help users reduce excessive social media consumption and regain control over their attention, habits, and daily digital routines.",
     tech: ["React", "TailwindCSS", "Node.js"],
-    link: "https://github.com/Dhanush0792",
+    link: "#",
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
     category: "Web/Apps",
+    status: "Under Development"
   },
   {
     title: "SecureVision — Security & Monitoring",
     description: "A surveillance and monitoring platform focused on secure backend workflows, intelligent observation, and security-focused systems.",
     tech: ["FastAPI", "React", "PostgreSQL", "Python"],
-    link: "https://github.com/Dhanush0792",
+    link: "#",
     image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2069&auto=format&fit=crop",
     category: "Web/Apps",
+    status: "Under Development"
+  },
+  {
+    title: "Vital — Sleep Companion",
+    description: "A sleep monitoring companion and coach designed to analyze sleep cycles, offer behavioral coaching, and support digital wellbeing.",
+    tech: ["React Native", "TailwindCSS", "Node.js"],
+    link: "#",
+    image: "https://images.unsplash.com/photo-1511295742364-92767fa62d9f?q=80&w=2070&auto=format&fit=crop",
+    category: "Web/Apps",
+    status: "Coming Soon"
   }
 ];
 
@@ -227,6 +241,20 @@ const ProjectDetailModal = ({ project, onClose }) => {
           {/* Content Section */}
           <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col">
             <div className="flex-1">
+              {/* Status Badge */}
+              {project.status && (
+                <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono border mb-4 font-bold uppercase tracking-wider ${
+                  project.status === 'Live'
+                    ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.1)]'
+                    : project.status === 'Coming Soon'
+                    ? 'bg-purple-500/10 border-purple-500/30 text-purple-400'
+                    : 'bg-amber-500/10 border-amber-500/30 text-amber-400'
+                }`}>
+                  <span className={`w-2 h-2 rounded-full ${project.status === 'Live' ? 'bg-emerald-400 animate-ping' : project.status === 'Coming Soon' ? 'bg-purple-400' : 'bg-amber-400'}`}></span>
+                  <span>{project.status}</span>
+                </div>
+              )}
+
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((t, i) => (
@@ -238,17 +266,11 @@ const ProjectDetailModal = ({ project, onClose }) => {
 
               <h2 className="text-3xl font-bold dark:text-white text-slate-900 mb-4 leading-tight">{project.title}</h2>
               <p className="dark:text-slate-300 text-slate-600 leading-relaxed mb-6 text-lg">{project.description}</p>
-
-              {project.featured && (
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-lg mb-6">
-                  <span className="text-yellow-400">⭐ Featured Project</span>
-                </div>
-              )}
             </div>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-8 border-t border-white/10">
-              {project.link !== '#' && (
+              {project.status === 'Live' ? (
                 <a
                   href={project.link}
                   target="_blank"
@@ -258,19 +280,11 @@ const ProjectDetailModal = ({ project, onClose }) => {
                   <FaExternalLinkAlt />
                   <span>Live Demo</span>
                 </a>
+              ) : (
+                <div className="flex-1 flex items-center justify-center gap-2 px-6 py-4 dark:bg-slate-800/40 bg-slate-100 dark:text-slate-400 text-slate-500 font-bold rounded-xl border dark:border-slate-800 border-slate-200 cursor-not-allowed select-none">
+                  <span>🛠️ {project.status || 'Under Development'}</span>
+                </div>
               )}
-
-              {/* Assuming GitHub link might be stored in a different field or same link if generic */}
-              {/* For now using project.link as fallback, ideally should have github specific field passed */}
-              <a
-                href={project.link} // Adjust if you have a specific github_url field
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-4 dark:bg-slate-800 bg-slate-700 dark:hover:bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl dark:border-slate-700 border-slate-600 transition-all duration-300 hover:-translate-y-1"
-              >
-                <FaGithub className="text-xl" />
-                <span>Source Code</span>
-              </a>
             </div>
           </div>
         </div>
