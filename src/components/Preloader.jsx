@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Instagram } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import Spline from '@splinetool/react-spline';
 
 const Preloader = ({ onFinished }) => {
@@ -8,7 +8,7 @@ const Preloader = ({ onFinished }) => {
   const [showContent, setShowContent] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
   const [isAssetLoaded, setIsAssetLoaded] = useState(false);
-  const fullText = "www.zainahmadfahrezi.me";
+  const fullText = "www.dhanushsiddilingam.com";
 
   const handleAssetLoad = () => {
     setIsAssetLoaded(true);
@@ -68,7 +68,7 @@ const Preloader = ({ onFinished }) => {
                 animate={{ opacity: 1, scale: 1, transition: { duration: 0.8, delay: 0.2, ease: "easeOut" } }}
                 className="text-4xl md:text-6xl font-moderniz font-bold mb-4"
               >
-                Zain Ahmad Fahrezi
+                Dhanush Siddilingam
               </motion.h1>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -83,14 +83,14 @@ const Preloader = ({ onFinished }) => {
                 animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.8 } }}
                 className="flex justify-center gap-6"
               >
-                <a href="https://github.com/zainahmadf28" target="_blank" rel="noopener noreferrer" className="dark:hover:text-[#00ffdc] hover:text-cyan-600 transition-all duration-300 transform hover:scale-110">
+                <a href="https://github.com/Dhanush0792" target="_blank" rel="noopener noreferrer" className="dark:hover:text-[#00ffdc] hover:text-cyan-600 transition-all duration-300 transform hover:scale-110" title="GitHub">
                   <Github size={32} />
                 </a>
-                <a href="https://www.linkedin.com/in/zain-ahmad-fahrezi-7a8a912a7/" target="_blank" rel="noopener noreferrer" className="dark:hover:text-[#00ffdc] hover:text-cyan-600 transition-all duration-300 transform hover:scale-110">
+                <a href="https://linkedin.com/in/dhanush-siddilingam-7a1bb9270" target="_blank" rel="noopener noreferrer" className="dark:hover:text-[#00ffdc] hover:text-cyan-600 transition-all duration-300 transform hover:scale-110" title="LinkedIn">
                   <Linkedin size={32} />
                 </a>
-                <a href="https://www.instagram.com/zainahmadf" target="_blank" rel="noopener noreferrer" className="dark:hover:text-[#00ffdc] hover:text-cyan-600 transition-all duration-300 transform hover:scale-110">
-                  <Instagram size={32} />
+                <a href="mailto:dhanushsiddilingam@gmail.com" className="dark:hover:text-[#00ffdc] hover:text-cyan-600 transition-all duration-300 transform hover:scale-110" title="Email">
+                  <Mail size={32} />
                 </a>
               </motion.div>
             </motion.div>
