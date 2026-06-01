@@ -217,23 +217,6 @@ const Home = () => {
                             </div>
                         </motion.div>
 
-                        {/* Azure Internship */}
-                        <motion.div 
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
-                            className="relative"
-                        >
-                            <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-violet-500 border-4 border-[#080414] shadow-[0_0_12px_#8b5cf6]"></div>
-                            
-                            <div className="p-6 rounded-2xl bg-violet-950/10 border border-violet-500/20 backdrop-blur-sm">
-                                <span className="text-xs font-bold px-3 py-1 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30">2024</span>
-                                <h3 className="text-xl font-bold text-white mt-4 font-moderniz">Azure AI Model Evaluation</h3>
-                                <p className="text-violet-400 font-semibold mt-1">Microsoft AI Model Evaluation Internship</p>
-                                <p className="text-slate-300 mt-2 font-cascadia text-sm">Worked on evaluation frameworks and metrics configuration for large language models.</p>
-                            </div>
-                        </motion.div>
 
                         {/* Class XII */}
                         <motion.div 
