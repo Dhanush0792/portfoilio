@@ -4,7 +4,7 @@ import { useTheme } from '../contexts/ThemeContext';
 
 export const StaggeredMenu = ({
     position = 'right',
-    colors = ['#0891b2', '#06b6d4'], // Cyan/Teal defaults to match site
+    colors = ['#0891b2', '#06b6d4'], // violet/Teal defaults to match site
     items = [],
     socialItems = [],
     displaySocials = true,
@@ -15,7 +15,7 @@ export const StaggeredMenu = ({
     openMenuButtonColor = '#fff',
     changeMenuColorOnOpen = true,
     isFixed = false,
-    accentColor = '#06b6d4', // Cyan accent
+    accentColor = '#06b6d4', // violet accent
     closeOnClickAway = true,
     onMenuOpen,
     onMenuClose,
@@ -381,7 +381,7 @@ export const StaggeredMenu = ({
                     aria-hidden={!open}
                 >
                     <div className="flex justify-end mb-4">
-                        <button onClick={closeMenu} className={`text-3xl transition-colors ${theme === 'dark' ? 'text-white hover:text-cyan-400' : 'text-slate-800 hover:text-cyan-500'}`}>
+                        <button onClick={closeMenu} className={`text-3xl transition-colors ${theme === 'dark' ? 'text-white hover:text-violet-400' : 'text-slate-800 hover:text-violet-500'}`}>
                             &times;
                         </button>
                     </div>
@@ -397,7 +397,7 @@ export const StaggeredMenu = ({
                                     <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
                                         <a
                                             className={`sm-panel-item relative font-semibold text-[3rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[all] duration-150 ease-linear inline-block no-underline pr-[1.4em]
-                                                ${theme === 'dark' ? 'text-white hover:text-[#00ffdc]' : 'text-black hover:text-cyan-600'}`}
+                                                ${theme === 'dark' ? 'text-white hover:text-[#00ffd0]' : 'text-black hover:text-violet-600'}`}
                                             href={it.link}
                                             onClick={(e) => {
                                                 e.preventDefault();
@@ -440,7 +440,7 @@ export const StaggeredMenu = ({
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className={`sm-socials-link text-[1.2rem] font-medium no-underline relative inline-block py-[2px] transition-[color,opacity] duration-300 ease-linear
-                                                    ${theme === 'dark' ? 'text-slate-300 hover:text-[#00ffdc]' : 'text-[#111] hover:text-cyan-600'}`}
+                                                    ${theme === 'dark' ? 'text-slate-300 hover:text-[#00ffd0]' : 'text-[#111] hover:text-violet-600'}`}
                                             >
                                                 {s.label}
                                             </a>

@@ -157,7 +157,7 @@ const CertificateCard = ({ cert, onClick }) => {
       whileHover={{ y: -8 }}
       onClick={() => onClick(cert)}
     >
-      <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden dark:shadow-lg shadow-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-400/30 transition-all duration-500">
+      <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden dark:shadow-lg shadow-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-violet-400/30 transition-all duration-500">
         <div className="absolute inset-0">
           <img src={cert.image} alt={cert.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/60 to-slate-900/30 group-hover:from-slate-900/95 transition-all duration-500"></div>
@@ -165,7 +165,7 @@ const CertificateCard = ({ cert, onClick }) => {
         <div className="absolute inset-0 p-5 flex flex-col justify-between">
           <div className="flex-1 flex items-start justify-between">
             <div className="bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
-              <span className="text-xs font-semibold text-cyan-300 uppercase tracking-wider">{cert.issuer}</span>
+              <span className="text-xs font-semibold text-violet-300 uppercase tracking-wider">{cert.issuer}</span>
             </div>
             <div className="bg-emerald-500/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-emerald-400/30">
               <span className="text-xs font-bold text-emerald-300">{cert.date}</span>
@@ -181,14 +181,14 @@ const CertificateCard = ({ cert, onClick }) => {
                 <span className="text-sm font-medium">View Certificate</span>
               </div>
               <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="bg-cyan-500/20 backdrop-blur-md p-2 rounded-full border border-cyan-400/30">
-                  <FaExternalLinkAlt className="text-cyan-300 text-sm" />
+                <div className="bg-violet-500/20 backdrop-blur-md p-2 rounded-full border border-violet-400/30">
+                  <FaExternalLinkAlt className="text-violet-300 text-sm" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/0 via-transparent to-emerald-500/0 group-hover:from-cyan-500/10 group-hover:to-emerald-500/10 transition-all duration-500"></div>
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-500/0 via-transparent to-emerald-500/0 group-hover:from-violet-500/10 group-hover:to-emerald-500/10 transition-all duration-500"></div>
       </div>
     </motion.div>
   );
@@ -258,7 +258,7 @@ const ProjectDetailModal = ({ project, onClose }) => {
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((t, i) => (
-                  <span key={i} className="flex items-center gap-1 text-xs font-mono px-3 py-1.5 rounded-full dark:bg-cyan-500/10 bg-cyan-100 dark:text-cyan-300 text-cyan-700 dark:border-cyan-500/20 border-cyan-300">
+                  <span key={i} className="flex items-center gap-1 text-xs font-mono px-3 py-1.5 rounded-full dark:bg-violet-500/10 bg-violet-100 dark:text-violet-300 text-violet-700 dark:border-violet-500/20 border-violet-300">
                     {techIcons?.[t]} {t}
                   </span>
                 ))}
@@ -275,7 +275,7 @@ const ProjectDetailModal = ({ project, onClose }) => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 dark:bg-gradient-to-r dark:from-cyan-600 dark:to-emerald-600 dark:hover:from-cyan-500 dark:hover:to-emerald-500 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-1"
+                  className="flex-1 flex items-center justify-center gap-2 px-6 py-4 dark:bg-gradient-to-r dark:from-violet-600 dark:to-emerald-600 dark:hover:from-violet-500 dark:hover:to-emerald-500 bg-violet-600 hover:bg-violet-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-violet-500/30 hover:-translate-y-1"
                 >
                   <FaExternalLinkAlt />
                   <span>Live Demo</span>
@@ -306,7 +306,7 @@ const ProjectCard = ({ project, onClick }) => {
   return (
     <div
       onClick={() => onClick(project)}
-      className="group relative h-64 sm:h-72 rounded-2xl overflow-hidden transition-all duration-300 dark:shadow-none shadow-lg hover:shadow-xl dark:hover:shadow-cyan-500/30 hover:-translate-y-2 cursor-pointer"
+      className="group relative h-64 sm:h-72 rounded-2xl overflow-hidden transition-all duration-300 dark:shadow-none shadow-lg hover:shadow-xl dark:hover:shadow-violet-500/30 hover:-translate-y-2 cursor-pointer"
       style={{ background: `url('${project.image}') center/cover no-repeat` }}
     >
       <div className="absolute inset-0 dark:bg-black/60 bg-slate-900/70 dark:group-hover:bg-black/40 group-hover:bg-slate-900/50 transition-colors duration-500"></div>
@@ -314,7 +314,7 @@ const ProjectCard = ({ project, onClick }) => {
       <div className="absolute inset-0 flex flex-col justify-between p-6 opacity-100 transition-opacity duration-300">
         <div className="translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
           <div className="flex justify-between items-start">
-            <h3 className="text-2xl font-bold text-white dark:group-hover:text-cyan-300 group-hover:text-cyan-400 transition-colors">{project.title}</h3>
+            <h3 className="text-2xl font-bold text-white dark:group-hover:text-violet-300 group-hover:text-violet-400 transition-colors">{project.title}</h3>
             <div className="bg-white/10 backdrop-blur-md p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300">
               <FaExternalLinkAlt className="text-white" />
             </div>
@@ -325,7 +325,7 @@ const ProjectCard = ({ project, onClick }) => {
         <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
           <div className="flex flex-wrap gap-2">
             {project.tech.slice(0, 3).map((t, i) => (
-              <span key={i} className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full bg-cyan-500/20 text-cyan-200 border border-cyan-400/20 backdrop-blur-sm">
+              <span key={i} className="flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-200 border border-violet-400/20 backdrop-blur-sm">
                 {techIcons?.[t] || t}
               </span>
             ))}
@@ -338,7 +338,7 @@ const ProjectCard = ({ project, onClick }) => {
         </div>
       </div>
 
-      <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-cyan-400/50 transition-colors duration-300 pointer-events-none"></div>
+      <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-violet-400/50 transition-colors duration-300 pointer-events-none"></div>
     </div>
   );
 };
@@ -380,7 +380,7 @@ const CertificatePreviewModal = ({ certificate, onClose }) => {
         {/* Content Section */}
         <div className="w-full md:w-2/5 p-8 flex flex-col justify-center dark:bg-slate-900/50 bg-white">
           <div className="mb-6">
-            <div className="inline-block px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold tracking-wider mb-4">
+            <div className="inline-block px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs font-bold tracking-wider mb-4">
               {certificate.issuer}
             </div>
             <h2 className="text-2xl font-bold dark:text-white text-slate-900 mb-2 leading-tight">{certificate.title}</h2>
@@ -392,7 +392,7 @@ const CertificatePreviewModal = ({ certificate, onClose }) => {
               href={certificate.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 group"
+              className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-violet-500/25 group"
             >
               <FaDownload className="group-hover:animate-bounce" />
               <span>Download / View PDF</span>
@@ -583,7 +583,7 @@ function ProjectSection() {
         className="text-center mb-20"
       >
         <h2 className="text-4xl font-bold font-moderniz">
-          <span className="dark:text-[#00ffdc] text-cyan-600"><LineShadowText shadowColor="#00b3a4">PORTFOLIO</LineShadowText></span>
+          <span className="dark:text-[#00ffd0] text-violet-600"><LineShadowText shadowColor="#00b3a4">PORTFOLIO</LineShadowText></span>
           {' '}
           <span className="dark:text-white text-slate-800"><LineShadowText shadowColor="#bbbbbb">SHOWCASE</LineShadowText></span>
         </h2>
@@ -600,7 +600,7 @@ function ProjectSection() {
               <motion.button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative flex flex-1 flex-col items-center justify-center px-2 py-7 rounded-2xl font-semibold text-base transition-colors duration-300 outline-none ${activeTab === tab.id ? "dark:text-white text-slate-900" : "text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300"}`}
+                className={`relative flex flex-1 flex-col items-center justify-center px-2 py-7 rounded-2xl font-semibold text-base transition-colors duration-300 outline-none ${activeTab === tab.id ? "dark:text-white text-slate-900" : "text-slate-400 hover:text-violet-600 dark:hover:text-violet-300"}`}
                 whileTap={{ scale: 0.97 }}
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
@@ -641,14 +641,14 @@ function ProjectSection() {
                   {/* Only show category buttons for dummy data */}
                   {projectsFromDB.length === 0 && (
                     <div className="flex justify-center gap-4 mb-8">
-                      <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'Web/Apps' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('Web/Apps')}>Web/Apps</button>
-                      <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === '3D Design' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('3D Design')}>3D Design</button>
+                      <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'Web/Apps' ? 'bg-violet-700/80 text-white border-violet-400 shadow-violet-500/10 shadow-lg' : 'bg-slate-900/60 text-violet-200 border-slate-700 hover:bg-violet-800/40 hover:text-white'}`} onClick={() => setProjectCategory('Web/Apps')}>Web/Apps</button>
+                      <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === '3D Design' ? 'bg-violet-700/80 text-white border-violet-400 shadow-violet-500/10 shadow-lg' : 'bg-slate-900/60 text-violet-200 border-slate-700 hover:bg-violet-800/40 hover:text-white'}`} onClick={() => setProjectCategory('3D Design')}>3D Design</button>
                     </div>
                   )}
 
                   {loadingProjects ? (
                     <div className="flex justify-center py-12">
-                      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-400"></div>
+                      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-violet-400"></div>
                     </div>
                   ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -664,7 +664,7 @@ function ProjectSection() {
                         <div className="col-span-full text-center text-slate-400 py-12">
                           No projects available yet.
                           {projectsFromDB.length === 0 && (
-                            <div className="mt-4 text-sm text-cyan-400">
+                            <div className="mt-4 text-sm text-violet-400">
                               Add projects via Admin Dashboard to see them here!
                             </div>
                           )}
@@ -704,7 +704,7 @@ function ProjectSection() {
                           {visibleCertificatesCount < activeCertificates.length ? (
                             <motion.button
                               onClick={handleShowMore}
-                              className="group dark:bg-gradient-to-r dark:from-cyan-600 dark:to-emerald-600 dark:hover:from-cyan-500 dark:hover:to-emerald-500 bg-cyan-600 hover:bg-cyan-500 px-8 py-3 rounded-full text-white font-semibold transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
+                              className="group dark:bg-gradient-to-r dark:from-violet-600 dark:to-emerald-600 dark:hover:from-violet-500 dark:hover:to-emerald-500 bg-violet-600 hover:bg-violet-500 px-8 py-3 rounded-full text-white font-semibold transition-all duration-300 shadow-lg hover:shadow-violet-500/25"
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
                             >
@@ -730,10 +730,10 @@ function ProjectSection() {
                 <div className="max-w-4xl mx-auto space-y-8">
                   {Object.entries(techStack).map(([category, techs]) => (
                     <div key={category}>
-                      <h3 className="text-xl font-bold dark:text-cyan-300 text-cyan-600 capitalize mb-4 border-b-2 dark:border-slate-800 border-slate-200 pb-2">{category}</h3>
+                      <h3 className="text-xl font-bold dark:text-violet-300 text-violet-600 capitalize mb-4 border-b-2 dark:border-slate-800 border-slate-200 pb-2">{category}</h3>
                       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                         {techs.map((tech, i) => (
-                          <div key={i} className="flex flex-col items-center justify-center gap-3 p-4 rounded-xl dark:bg-slate-900/70 bg-white border dark:border-slate-800 border-slate-100 transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-cyan-500/30 dark:shadow-none shadow-md hover:shadow-lg dark:hover:shadow-none">
+                          <div key={i} className="flex flex-col items-center justify-center gap-3 p-4 rounded-xl dark:bg-slate-900/70 bg-white border dark:border-slate-800 border-slate-100 transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:border-violet-500/30 dark:shadow-none shadow-md hover:shadow-lg dark:hover:shadow-none">
                             <div className="text-4xl">{tech.icon}</div>
                             <p className="text-sm dark:text-slate-300 text-slate-600">{tech.name}</p>
                           </div>

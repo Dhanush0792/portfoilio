@@ -129,7 +129,7 @@ const AdminGallery = ({ isOpen, onClose }) => {
                     {/* Header */}
                     <div className="p-6 border-b dark:border-slate-800 border-slate-200 flex justify-between items-center bg-white/50 dark:bg-slate-900/50 backdrop-blur-md">
                         <h2 className="text-2xl font-bold dark:text-white text-slate-800 flex items-center gap-3">
-                            <FaImage className="text-cyan-500" /> Gallery Manager
+                            <FaImage className="text-violet-500" /> Gallery Manager
                         </h2>
                         <div className="flex items-center gap-4">
                             <button
@@ -188,7 +188,7 @@ const AdminGallery = ({ isOpen, onClose }) => {
                                                 required
                                                 value={formData.title}
                                                 onChange={e => setFormData({ ...formData, title: e.target.value })}
-                                                className="w-full px-4 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-white dark:text-white focus:ring-2 focus:ring-cyan-500 outline-none"
+                                                className="w-full px-4 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-white dark:text-white focus:ring-2 focus:ring-violet-500 outline-none"
                                             />
                                         </div>
 
@@ -200,7 +200,7 @@ const AdminGallery = ({ isOpen, onClose }) => {
                                                     required
                                                     value={formData.date}
                                                     onChange={e => setFormData({ ...formData, date: e.target.value })}
-                                                    className="w-full px-4 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-white dark:text-white focus:ring-2 focus:ring-cyan-500 outline-none"
+                                                    className="w-full px-4 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-white dark:text-white focus:ring-2 focus:ring-violet-500 outline-none"
                                                 />
                                             </div>
                                             <div>
@@ -208,7 +208,7 @@ const AdminGallery = ({ isOpen, onClose }) => {
                                                 <select
                                                     value={formData.type}
                                                     onChange={e => setFormData({ ...formData, type: e.target.value })}
-                                                    className="w-full px-4 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-white dark:text-white focus:ring-2 focus:ring-cyan-500 outline-none"
+                                                    className="w-full px-4 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-white dark:text-white focus:ring-2 focus:ring-violet-500 outline-none"
                                                 >
                                                     <option value="image">Image</option>
                                                     <option value="video">Video</option>
@@ -225,7 +225,7 @@ const AdminGallery = ({ isOpen, onClose }) => {
                                                     placeholder="https://..."
                                                     value={formData.media_url}
                                                     onChange={e => setFormData({ ...formData, media_url: e.target.value })}
-                                                    className="flex-1 px-4 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-white dark:text-white focus:ring-2 focus:ring-cyan-500 outline-none"
+                                                    className="flex-1 px-4 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-white dark:text-white focus:ring-2 focus:ring-violet-500 outline-none"
                                                 />
                                             </div>
                                             <p className="text-xs text-slate-500 mt-1">Paste a direct image link from Unsplash or Supabase Storage.</p>
@@ -245,7 +245,7 @@ const AdminGallery = ({ isOpen, onClose }) => {
                                                 required
                                                 value={formData.description}
                                                 onChange={e => setFormData({ ...formData, description: e.target.value })}
-                                                className="w-full px-4 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-white dark:text-white focus:ring-2 focus:ring-cyan-500 outline-none resize-none"
+                                                className="w-full px-4 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-800 bg-white dark:text-white focus:ring-2 focus:ring-violet-500 outline-none resize-none"
                                             />
                                         </div>
 
@@ -259,7 +259,7 @@ const AdminGallery = ({ isOpen, onClose }) => {
                                             </button>
                                             <button
                                                 type="submit"
-                                                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold rounded-lg shadow-lg flex items-center gap-2"
+                                                className="px-6 py-2 bg-gradient-to-r from-violet-500 to-blue-600 hover:from-violet-400 hover:to-blue-500 text-white font-bold rounded-lg shadow-lg flex items-center gap-2"
                                             >
                                                 <FaSave /> Save Item
                                             </button>

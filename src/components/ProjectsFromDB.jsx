@@ -37,9 +37,9 @@ const ProjectsFromDB = () => {
     return (
       <div className="flex justify-center items-center py-20">
         <div className="relative">
-          <div className="w-16 h-16 border-4 border-cyan-200/20 border-t-cyan-400 rounded-full animate-spin"></div>
+          <div className="w-16 h-16 border-4 border-violet-200/20 border-t-violet-400 rounded-full animate-spin"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="w-8 h-8 bg-cyan-400/20 rounded-full animate-pulse"></div>
+            <div className="w-8 h-8 bg-violet-400/20 rounded-full animate-pulse"></div>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ const ProjectsFromDB = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="group relative overflow-hidden rounded-2xl bg-slate-900/50 border border-slate-800/50 hover:border-cyan-400/50 transition-all duration-500 shadow-lg hover:shadow-cyan-500/20"
+            className="group relative overflow-hidden rounded-2xl bg-slate-900/50 border border-slate-800/50 hover:border-violet-400/50 transition-all duration-500 shadow-lg hover:shadow-violet-500/20"
             whileHover={{ y: -8 }}
           >
             {/* Image Container */}
@@ -95,7 +95,7 @@ const ProjectsFromDB = () => {
                 {/* Featured Badge */}
                 {project.featured && (
                   <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1.5 text-xs font-bold rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-900 shadow-lg">
+                    <span className="px-3 py-1.5 text-xs font-bold rounded-full bg-gradient-to-r from-violet-400 to-emerald-400 text-slate-900 shadow-lg">
                       ⭐ Featured
                     </span>
                   </div>
@@ -105,7 +105,7 @@ const ProjectsFromDB = () => {
 
             {/* Content */}
             <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors line-clamp-2">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-violet-400 transition-colors line-clamp-2">
                 {project.title}
               </h3>
 
@@ -121,7 +121,7 @@ const ProjectsFromDB = () => {
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 text-xs font-medium rounded-full bg-cyan-400/10 text-cyan-300 border border-cyan-400/20 hover:bg-cyan-400/20 transition-colors"
+                      className="px-2.5 py-1 text-xs font-medium rounded-full bg-violet-400/10 text-violet-300 border border-violet-400/20 hover:bg-violet-400/20 transition-colors"
                     >
                       {tag}
                     </span>
@@ -136,7 +136,7 @@ const ProjectsFromDB = () => {
                     href={project.demo_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 px-4 py-2.5 bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-500 hover:to-cyan-600 text-white rounded-lg text-center text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-cyan-500/30"
+                    className="flex-1 px-4 py-2.5 bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-500 hover:to-violet-600 text-white rounded-lg text-center text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-violet-500/30"
                   >
                     <FaExternalLinkAlt className="text-xs" />
                     <span>Live Demo</span>
@@ -157,7 +157,7 @@ const ProjectsFromDB = () => {
             </div>
 
             {/* Hover Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-transparent to-emerald-500/0 group-hover:from-cyan-500/5 group-hover:to-emerald-500/5 transition-all duration-500 pointer-events-none rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/0 via-transparent to-emerald-500/0 group-hover:from-violet-500/5 group-hover:to-emerald-500/5 transition-all duration-500 pointer-events-none rounded-2xl"></div>
           </motion.div>
         ))}
       </AnimatePresence>

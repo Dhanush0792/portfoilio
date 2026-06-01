@@ -43,59 +43,86 @@ function useCardTexture(photoUrl) {
       canvas.height = 1024;
       const ctx = canvas.getContext('2d');
 
-      // 1. Draw the base card lanyard template (provides background gradients, top strip, and layout structure)
-      ctx.drawImage(baseImg, 0, 0, 1024, 1024);
+      // 1. Draw custom background gradient for front card (left half: x: 0 to 512)
+      const frontGrad = ctx.createLinearGradient(0, 0, 512, 1024);
+      frontGrad.addColorStop(0, '#0a061b');
+      frontGrad.addColorStop(0.5, '#150a36');
+      frontGrad.addColorStop(1, '#05020c');
+      ctx.fillStyle = frontGrad;
+      ctx.fillRect(0, 0, 512, 1024);
 
-      // 2. Cover the original photo area with a matching dark cyber cyan background
-      ctx.fillStyle = '#091b24';
-      ctx.fillRect(0, 90, 340, 470);
+      // Draw subtle front tech grid lines in soft violet/teal
+      ctx.strokeStyle = 'rgba(0, 255, 208, 0.03)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i < 512; i += 32) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, 1024);
+        ctx.stroke();
+      }
+      for (let i = 0; i < 1024; i += 32) {
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(512, i);
+        ctx.stroke();
+      }
 
-      // 3. Draw Dhanush's photo with custom brightness/contrast adjustments to blend perfectly
+      // 2. Draw Dhanush's photo with neon emerald frame border
       ctx.save();
       ctx.filter = 'brightness(1.15) contrast(1.1)';
-      ctx.drawImage(profileImg, 0, 90, 340, 470);
+      ctx.drawImage(profileImg, 0, 85, 340, 475);
       ctx.restore();
 
-      // 4. Cover the original vertical "ZAIN" text area
-      ctx.fillStyle = '#060a18';
-      ctx.fillRect(350, 0, 162, 1024);
+      // Top Security Pass strip on Front (deep violet)
+      ctx.fillStyle = '#6d28d9';
+      ctx.fillRect(0, 0, 512, 75);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 22px "Courier New", monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('LEVEL 5 CLEARANCE // ACCESS PASS', 256, 46);
 
-      // Fill with a matching cyber gradient to blend the vertical strip seamlessly
-      const grad = ctx.createLinearGradient(350, 0, 512, 1024);
-      grad.addColorStop(0, '#060a18');
-      grad.addColorStop(0.5, '#0b0f1e');
-      grad.addColorStop(1, '#020306');
-      ctx.fillStyle = grad;
-      ctx.fillRect(350, 0, 162, 1024);
+      // Photo frame highlight bar (neon emerald)
+      ctx.fillStyle = '#00ffd0';
+      ctx.fillRect(337, 85, 3, 475);
 
       // Write vertical text "DHANUSH"
       ctx.save();
       ctx.translate(430, 512);
       ctx.rotate(-Math.PI / 2);
-      ctx.fillStyle = '#ffffff';
-      ctx.font = 'bold 90px "Courier New", Courier, monospace';
+      ctx.fillStyle = 'rgba(167, 139, 250, 0.2)'; // semi-transparent violet
+      ctx.font = 'bold 95px "Courier New", Courier, monospace';
       ctx.textAlign = 'center';
       ctx.fillText('DHANUSH', 0, 0);
       ctx.restore();
 
-      // 5. Draw custom Name Label over the old name area
+      // Write a secondary vertical label "AI DEVS"
+      ctx.save();
+      ctx.translate(480, 512);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillStyle = '#00ffd0';
+      ctx.font = 'bold 24px "Courier New", Courier, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('DS ACCESS // SECURE', 0, 0);
+      ctx.restore();
+
+      // 3. Draw custom Name Label over the old name area
       ctx.fillStyle = '#ffffff';
       ctx.beginPath();
       if (ctx.roundRect) {
-        ctx.roundRect(25, 570, 360, 120, 16);
+        ctx.roundRect(25, 575, 360, 115, 16);
       } else {
-        ctx.rect(25, 570, 360, 120);
+        ctx.rect(25, 575, 360, 115);
       }
       ctx.fill();
 
       // Name Text
-      ctx.fillStyle = '#000000';
+      ctx.fillStyle = '#0f0826';
       ctx.font = 'bold 36px "Courier New", Courier, monospace';
       ctx.textAlign = 'center';
-      ctx.fillText('DHANUSH S.', 205, 615);
+      ctx.fillText('DHANUSH S.', 205, 618);
 
-      // Role Capsule
-      ctx.fillStyle = '#000000';
+      // Role Capsule (deep violet/indigo)
+      ctx.fillStyle = '#1e1b4b';
       ctx.beginPath();
       if (ctx.roundRect) {
         ctx.roundRect(45, 635, 320, 42, 10);
@@ -104,23 +131,35 @@ function useCardTexture(photoUrl) {
       }
       ctx.fill();
 
-      ctx.fillStyle = '#00ffdc';
+      ctx.fillStyle = '#00ffd0'; // Neon emerald/teal text
       ctx.font = 'bold 20px "Courier New", Courier, monospace';
       ctx.fillText('AI & SAAS BUILDER', 205, 662);
 
-      // 6. Draw back of the card custom design (right half: x from 512 to 1024)
-      ctx.fillStyle = '#03050a';
+      // Add a small barcode under the name tag
+      ctx.fillStyle = '#ffffff';
+      const barcodeY = 715;
+      const barcodeHeight = 50;
+      const barcodeWidths = [8, 4, 12, 6, 4, 10, 18, 4, 6, 12, 10, 4, 18, 6, 4, 10, 6, 12, 4, 8, 18, 4];
+      let currentX = 50;
+      barcodeWidths.forEach((w, index) => {
+        ctx.fillStyle = index % 2 === 0 ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0)';
+        ctx.fillRect(currentX, barcodeY, w * 1.3, barcodeHeight);
+        currentX += w * 1.3;
+      });
+
+      // 4. Draw back of the card custom design (right half: x from 512 to 1024)
+      ctx.fillStyle = '#030107';
       ctx.fillRect(512, 0, 512, 1024);
 
       const backGrad = ctx.createLinearGradient(512, 0, 1024, 1024);
-      backGrad.addColorStop(0, '#03050a');
-      backGrad.addColorStop(0.5, '#0a0f1d');
-      backGrad.addColorStop(1, '#020305');
+      backGrad.addColorStop(0, '#05020c');
+      backGrad.addColorStop(0.5, '#11082d');
+      backGrad.addColorStop(1, '#020105');
       ctx.fillStyle = backGrad;
       ctx.fillRect(512, 0, 512, 1024);
 
       // Draw subtle grid on back side
-      ctx.strokeStyle = 'rgba(0, 255, 220, 0.03)';
+      ctx.strokeStyle = 'rgba(167, 139, 250, 0.03)';
       ctx.lineWidth = 1;
       for (let i = 512; i < 1024; i += 32) {
         ctx.beginPath();
@@ -135,32 +174,32 @@ function useCardTexture(photoUrl) {
         ctx.stroke();
       }
 
-      // Draw central circle & logo
-      ctx.strokeStyle = '#00ffdc';
+      // Draw central circle & logo (violet with neon emerald core)
+      ctx.strokeStyle = '#6d28d9';
       ctx.lineWidth = 4;
       ctx.beginPath();
       ctx.arc(768, 512, 120, 0, Math.PI * 2);
       ctx.stroke();
 
-      ctx.strokeStyle = 'rgba(0, 255, 220, 0.3)';
+      ctx.strokeStyle = 'rgba(0, 255, 208, 0.2)';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.arc(768, 512, 140, 0, Math.PI * 2);
       ctx.stroke();
 
-      ctx.fillStyle = '#ffffff';
+      ctx.fillStyle = '#00ffd0';
       ctx.font = 'bold 80px "Courier New", Courier, monospace';
       ctx.textAlign = 'center';
       ctx.fillText('DS', 768, 540);
 
-      ctx.fillStyle = '#7a8ba3';
-      ctx.font = 'bold 24px "Courier New", Courier, monospace';
+      ctx.fillStyle = '#a78bfa';
+      ctx.font = 'bold 22px "Courier New", Courier, monospace';
       ctx.fillText('SECURITY CLEARANCE LEVEL 5', 768, 720);
-      ctx.fillStyle = '#b62424';
-      ctx.fillText('DO NOT DUPLICATE', 768, 760);
+      ctx.fillStyle = '#ef4444'; // Red alarm accent
+      ctx.fillText('SYSTEM INITIATED // V1.0', 768, 760);
 
       // Red Clearance Strip on the back too
-      ctx.fillStyle = '#b62424';
+      ctx.fillStyle = '#6d28d9';
       ctx.fillRect(512, 0, 512, 75);
       ctx.fillStyle = '#ffffff';
       ctx.font = 'bold 24px "Courier New", monospace';

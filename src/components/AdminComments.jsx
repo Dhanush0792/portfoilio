@@ -217,7 +217,7 @@ const AdminComments = ({ isOpen, onClose }) => {
               <span className="text-slate-300 text-sm font-mono">{sessionTime}</span>
               <button
                 onClick={extendSession}
-                className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+                className="text-xs text-violet-400 hover:text-violet-300 transition-colors duration-300"
                 title="Extend session"
               >
                 +15m

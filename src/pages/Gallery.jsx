@@ -112,7 +112,7 @@ const Gallery = () => {
         >
             <div className="text-center mb-8 md:mb-16 px-4">
                 <h1 className="text-3xl md:text-6xl font-black font-moderniz tracking-tighter mb-4">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 dark:from-cyan-300 dark:to-blue-500 filter drop-shadow-lg">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-blue-600 dark:from-violet-300 dark:to-blue-500 filter drop-shadow-lg">
                         ACTIVITY
                     </span>
                     <br className="md:hidden" />
@@ -125,7 +125,7 @@ const Gallery = () => {
             {/* Loading State */}
             {isLoading && (
                 <div className="flex justify-center py-20">
-                    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-500"></div>
+                    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-violet-500"></div>
                 </div>
             )}
 
@@ -172,7 +172,7 @@ const Gallery = () => {
 
                                     {/* Gradient Overlay (Desktop Hover) */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 hidden md:flex">
-                                        <span className="text-cyan-300 text-xs font-bold uppercase tracking-wider mb-1">{activity.date}</span>
+                                        <span className="text-violet-300 text-xs font-bold uppercase tracking-wider mb-1">{activity.date}</span>
                                         <h3 className="text-white font-bold text-lg leading-tight">{activity.title}</h3>
                                     </div>
                                 </div>
@@ -295,7 +295,7 @@ const Gallery = () => {
                                 {/* Header Info */}
                                 <div className="p-4 md:p-6 border-b dark:border-slate-800 border-slate-200 flex-shrink-0 bg-white dark:bg-slate-900">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-xs font-bold px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400">
+                                        <span className="text-xs font-bold px-3 py-1 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400">
                                             {selectedActivity.date}
                                         </span>
                                         <button onClick={() => setSelectedActivity(null)} className="hidden md:block text-slate-400 hover:text-red-500 transition-colors">
@@ -311,7 +311,7 @@ const Gallery = () => {
                                 {/* Comments List (Scrollable) */}
                                 <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 bg-slate-50 dark:bg-slate-900/50">
                                     {loadingComments ? (
-                                        <div className="flex justify-center py-4"><div className="animate-spin w-6 h-6 border-2 border-cyan-500 rounded-full border-t-transparent"></div></div>
+                                        <div className="flex justify-center py-4"><div className="animate-spin w-6 h-6 border-2 border-violet-500 rounded-full border-t-transparent"></div></div>
                                     ) : comments.length > 0 ? (
                                         comments.map((comment) => (
                                             <div key={comment.id} className="flex gap-3 animate-fade-in">
@@ -356,7 +356,7 @@ const Gallery = () => {
                                                 placeholder="Name"
                                                 value={commentForm.name}
                                                 onChange={(e) => setCommentForm({ ...commentForm, name: e.target.value })}
-                                                className="w-1/3 text-sm px-3 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg border-none focus:ring-1 focus:ring-cyan-400 dark:text-white"
+                                                className="w-1/3 text-sm px-3 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg border-none focus:ring-1 focus:ring-violet-400 dark:text-white"
                                                 required
                                             />
                                             <input
@@ -364,14 +364,14 @@ const Gallery = () => {
                                                 placeholder="Add a comment..."
                                                 value={commentForm.content}
                                                 onChange={(e) => setCommentForm({ ...commentForm, content: e.target.value })}
-                                                className="w-2/3 text-sm px-3 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg border-none focus:ring-1 focus:ring-cyan-400 dark:text-white"
+                                                className="w-2/3 text-sm px-3 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg border-none focus:ring-1 focus:ring-violet-400 dark:text-white"
                                                 required
                                             />
                                         </div>
                                         <button
                                             type="submit"
                                             disabled={submittingComment}
-                                            className="ml-auto text-xs font-bold text-cyan-600 hover:text-cyan-500 disabled:opacity-50 uppercase tracking-wider"
+                                            className="ml-auto text-xs font-bold text-violet-600 hover:text-violet-500 disabled:opacity-50 uppercase tracking-wider"
                                         >
                                             {submittingComment ? 'Posting...' : 'Post Comment'}
                                         </button>

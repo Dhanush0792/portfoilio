@@ -83,13 +83,13 @@ const Preloader = ({ onFinished }) => {
                 animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.8 } }}
                 className="flex justify-center gap-6"
               >
-                <a href="https://github.com/Dhanush0792" target="_blank" rel="noopener noreferrer" className="dark:hover:text-[#00ffdc] hover:text-cyan-600 transition-all duration-300 transform hover:scale-110" title="GitHub">
+                <a href="https://github.com/Dhanush0792" target="_blank" rel="noopener noreferrer" className="dark:hover:text-[#00ffd0] hover:text-violet-600 transition-all duration-300 transform hover:scale-110" title="GitHub">
                   <Github size={32} />
                 </a>
-                <a href="https://linkedin.com/in/dhanush-siddilingam-7a1bb9270" target="_blank" rel="noopener noreferrer" className="dark:hover:text-[#00ffdc] hover:text-cyan-600 transition-all duration-300 transform hover:scale-110" title="LinkedIn">
+                <a href="https://linkedin.com/in/dhanush-siddilingam-7a1bb9270" target="_blank" rel="noopener noreferrer" className="dark:hover:text-[#00ffd0] hover:text-violet-600 transition-all duration-300 transform hover:scale-110" title="LinkedIn">
                   <Linkedin size={32} />
                 </a>
-                <a href="mailto:dhanushsiddilingam@gmail.com" className="dark:hover:text-[#00ffdc] hover:text-cyan-600 transition-all duration-300 transform hover:scale-110" title="Email">
+                <a href="mailto:dhanushsiddilingam@gmail.com" className="dark:hover:text-[#00ffd0] hover:text-violet-600 transition-all duration-300 transform hover:scale-110" title="Email">
                   <Mail size={32} />
                 </a>
               </motion.div>

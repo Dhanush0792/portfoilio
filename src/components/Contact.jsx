@@ -68,7 +68,7 @@ const Contact = () => {
           id: comment.id,
           name: comment.name,
           message: comment.message,
-          photo: comment.photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(comment.name)}&background=00ffdc&color=000754&size=100`,
+          photo: comment.photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(comment.name)}&background=00ffd0&color=000754&size=100`,
           timestamp: comment.created_at,
           likes: comment.likes || 0,
           isPinned: comment.is_pinned || false  // ✨ NEW: Pin status
@@ -237,8 +237,8 @@ const Contact = () => {
       name: 'Secure Mail',
       icon: <FaEnvelope />,
       url: 'mailto:dhanushsiddilingam@gmail.com',
-      color: 'from-cyan-600 to-teal-700',
-      hoverColor: 'hover:shadow-cyan-500/25'
+      color: 'from-violet-600 to-teal-700',
+      hoverColor: 'hover:shadow-violet-500/25'
     }
   ];
 
@@ -248,7 +248,7 @@ const Contact = () => {
       <div className="absolute inset-0 bg-transparent"></div>
 
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-cyan-500/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute top-20 left-10 w-20 h-20 bg-violet-500/10 rounded-full blur-xl animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-500/10 rounded-full blur-xl animate-pulse delay-500"></div>
 
@@ -262,7 +262,7 @@ const Contact = () => {
           className="text-center mb-20 relative"
         >
           <h2 className="text-5xl md:text-6xl font-bold font-moderniz mb-4">
-            <span className="dark:bg-gradient-to-r dark:from-cyan-400 dark:via-emerald-400 dark:to-cyan-600 dark:bg-clip-text dark:text-transparent text-cyan-600">
+            <span className="dark:bg-gradient-to-r dark:from-violet-400 dark:via-emerald-400 dark:to-violet-600 dark:bg-clip-text dark:text-transparent text-violet-600">
               GET IN
             </span>
             {' '}
@@ -284,10 +284,10 @@ const Contact = () => {
           >
             {/* Contact Form Panel */}
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-emerald-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000 hidden dark:block"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 to-emerald-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000 hidden dark:block"></div>
               <div className="relative dark:bg-slate-900/80 bg-white backdrop-blur-xl rounded-3xl p-8 border dark:border-slate-700/50 border-slate-100 dark:shadow-none shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 dark:bg-gradient-to-r dark:from-cyan-600 dark:to-emerald-600 bg-cyan-600 rounded-full">
+                  <div className="p-3 dark:bg-gradient-to-r dark:from-violet-600 dark:to-emerald-600 bg-violet-600 rounded-full">
                     <FaPaperPlane className="text-white text-xl" />
                   </div>
                   <div>
@@ -299,13 +299,13 @@ const Contact = () => {
                 <form onSubmit={handleContactSubmit} className="space-y-6">
                   <div className="group">
                     <div className="relative">
-                      <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 dark:text-slate-400 text-slate-400 group-focus-within:text-cyan-600 dark:group-focus-within:text-cyan-400 transition-colors duration-300" />
+                      <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 dark:text-slate-400 text-slate-400 group-focus-within:text-violet-600 dark:group-focus-within:text-violet-400 transition-colors duration-300" />
                       <input
                         type="text"
                         placeholder="Your Name"
                         value={contactForm.name}
                         onChange={(e) => setContactForm(prev => ({ ...prev, name: e.target.value }))}
-                        className="w-full pl-12 pr-4 py-4 dark:bg-slate-800/50 bg-slate-50 border dark:border-slate-600/50 border-slate-200 rounded-xl dark:text-white text-slate-800 dark:placeholder-slate-400 placeholder-slate-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 dark:focus:ring-cyan-400/20 transition-all duration-300"
+                        className="w-full pl-12 pr-4 py-4 dark:bg-slate-800/50 bg-slate-50 border dark:border-slate-600/50 border-slate-200 rounded-xl dark:text-white text-slate-800 dark:placeholder-slate-400 placeholder-slate-400 focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 dark:focus:ring-violet-400/20 transition-all duration-300"
                         required
                       />
                     </div>
@@ -313,13 +313,13 @@ const Contact = () => {
 
                   <div className="group">
                     <div className="relative">
-                      <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 dark:text-slate-400 text-slate-500 group-focus-within:text-cyan-400 transition-colors duration-300" />
+                      <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 dark:text-slate-400 text-slate-500 group-focus-within:text-violet-400 transition-colors duration-300" />
                       <input
                         type="email"
                         placeholder="Your Email"
                         value={contactForm.email}
                         onChange={(e) => setContactForm(prev => ({ ...prev, email: e.target.value }))}
-                        className="w-full pl-12 pr-4 py-4 dark:bg-slate-800/50 bg-slate-50 border dark:border-slate-600/50 border-slate-200 rounded-xl dark:text-white text-slate-900 dark:placeholder-slate-400 placeholder-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                        className="w-full pl-12 pr-4 py-4 dark:bg-slate-800/50 bg-slate-50 border dark:border-slate-600/50 border-slate-200 rounded-xl dark:text-white text-slate-900 dark:placeholder-slate-400 placeholder-slate-500 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all duration-300"
                         required
                       />
                     </div>
@@ -327,13 +327,13 @@ const Contact = () => {
 
                   <div className="group">
                     <div className="relative">
-                      <FaComment className="absolute left-4 top-6 dark:text-slate-400 text-slate-500 group-focus-within:text-cyan-400 transition-colors duration-300" />
+                      <FaComment className="absolute left-4 top-6 dark:text-slate-400 text-slate-500 group-focus-within:text-violet-400 transition-colors duration-300" />
                       <textarea
                         placeholder="Your Message"
                         rows="4"
                         value={contactForm.message}
                         onChange={(e) => setContactForm(prev => ({ ...prev, message: e.target.value }))}
-                        className="w-full pl-12 pr-4 py-4 dark:bg-slate-800/50 bg-slate-50 border dark:border-slate-600/50 border-slate-200 rounded-xl dark:text-white text-slate-900 dark:placeholder-slate-400 placeholder-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 resize-none"
+                        className="w-full pl-12 pr-4 py-4 dark:bg-slate-800/50 bg-slate-50 border dark:border-slate-600/50 border-slate-200 rounded-xl dark:text-white text-slate-900 dark:placeholder-slate-400 placeholder-slate-500 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20 transition-all duration-300 resize-none"
                         required
                       ></textarea>
                     </div>
@@ -344,7 +344,7 @@ const Contact = () => {
                     disabled={isSubmittingContact}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full dark:bg-gradient-to-r dark:from-cyan-600 dark:to-emerald-600 dark:hover:from-cyan-500 dark:hover:to-emerald-500 bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/25 disabled:opacity-50"
+                    className="w-full dark:bg-gradient-to-r dark:from-violet-600 dark:to-emerald-600 dark:hover:from-violet-500 dark:hover:to-emerald-500 bg-violet-600 hover:bg-violet-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50"
                   >
                     {isSubmittingContact ? (
                       <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -415,7 +415,7 @@ const Contact = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000 hidden dark:block"></div>
               <div className="relative dark:bg-slate-900/80 bg-white backdrop-blur-xl rounded-3xl p-8 border dark:border-slate-700/50 border-slate-100 dark:shadow-none shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 dark:bg-gradient-to-r dark:from-emerald-600 dark:to-blue-600 bg-cyan-600 rounded-full">
+                  <div className="p-3 dark:bg-gradient-to-r dark:from-emerald-600 dark:to-blue-600 bg-violet-600 rounded-full">
                     <FaComment className="text-white text-xl" />
                   </div>
                   <div>
@@ -437,7 +437,7 @@ const Contact = () => {
                             </div>
                           )}
                         </div>
-                        <label className="absolute -bottom-2 -right-2 bg-cyan-600 text-white p-2 rounded-full cursor-pointer hover:bg-cyan-500 transition-colors duration-300">
+                        <label className="absolute -bottom-2 -right-2 bg-violet-600 text-white p-2 rounded-full cursor-pointer hover:bg-violet-500 transition-colors duration-300">
                           <FaCamera className="text-sm" />
                           <input
                             type="file"
@@ -473,7 +473,7 @@ const Contact = () => {
                     disabled={isSubmittingComment}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full dark:bg-gradient-to-r dark:from-emerald-600 dark:to-blue-600 dark:hover:from-emerald-500 dark:hover:to-blue-500 bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/25 disabled:opacity-50"
+                    className="w-full dark:bg-gradient-to-r dark:from-emerald-600 dark:to-blue-600 dark:hover:from-emerald-500 dark:hover:to-blue-500 bg-violet-600 hover:bg-violet-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-violet-500/25 disabled:opacity-50"
                   >
                     {isSubmittingComment ? (
                       <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -491,7 +491,7 @@ const Contact = () => {
             {/* Comments Display */}
             <div className="space-y-4">
               <h4 className="text-xl font-bold dark:text-white text-slate-900 flex items-center gap-2">
-                <FaComment className="text-cyan-400" />
+                <FaComment className="text-violet-400" />
                 Comments ({comments.length})
               </h4>
 
@@ -506,15 +506,15 @@ const Contact = () => {
                         exit={{ opacity: 0, scale: 0.9, x: -100 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         className={`group relative backdrop-blur-sm rounded-2xl p-6 border transition-all duration-300 ${comment.isPinned
-                          ? 'bg-gradient-to-br from-cyan-900/30 to-blue-900/30 border-cyan-400/50 shadow-lg shadow-cyan-500/10'
-                          : 'dark:bg-slate-800/50 bg-white border-slate-200 dark:border-slate-700/30 hover:border-cyan-400/30 shadow-sm'
+                          ? 'bg-gradient-to-br from-violet-900/30 to-blue-900/30 border-violet-400/50 shadow-lg shadow-violet-500/10'
+                          : 'dark:bg-slate-800/50 bg-white border-slate-200 dark:border-slate-700/30 hover:border-violet-400/30 shadow-sm'
                           }`}
                       >
                         {/* 📌 Pin Indicator */}
                         {comment.isPinned && (
-                          <div className="absolute top-3 right-3 flex items-center gap-2 bg-cyan-500/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-cyan-400/30">
-                            <FaThumbtack className="w-4 h-4 text-cyan-400" />
-                            <span className="text-xs font-semibold text-cyan-300">Pinned</span>
+                          <div className="absolute top-3 right-3 flex items-center gap-2 bg-violet-500/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-violet-400/30">
+                            <FaThumbtack className="w-4 h-4 text-violet-400" />
+                            <span className="text-xs font-semibold text-violet-300">Pinned</span>
                           </div>
                         )}
 

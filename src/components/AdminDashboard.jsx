@@ -654,7 +654,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
           className="bg-slate-900 rounded-3xl border border-slate-700 w-full max-w-7xl max-h-[90vh] overflow-hidden flex flex-col"
         >
           {/* Header */}
-          <div className="p-6 border-b border-slate-700 flex items-center justify-between bg-gradient-to-r from-cyan-900/20 to-emerald-900/20">
+          <div className="p-6 border-b border-slate-700 flex items-center justify-between bg-gradient-to-r from-violet-900/20 to-emerald-900/20">
             <div>
               <h2 className="text-3xl font-bold text-white mb-2">Admin Dashboard</h2>
               <p className="text-slate-400">Manage your portfolio content</p>
@@ -678,7 +678,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                   setEditingItem(null);
                 }}
                 className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 whitespace-nowrap ${activeTab === tab.id
-                  ? 'bg-gradient-to-r from-cyan-600 to-emerald-600 text-white shadow-lg'
+                  ? 'bg-gradient-to-r from-violet-600 to-emerald-600 text-white shadow-lg'
                   : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
                   }`}
               >
@@ -693,7 +693,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
           <div className="flex-1 overflow-y-auto p-6">
             {loading ? (
               <div className="flex items-center justify-center h-64">
-                <div className="w-12 h-12 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-12 h-12 border-4 border-violet-500 border-t-transparent rounded-full animate-spin"></div>
               </div>
             ) : (
               <>
@@ -707,7 +707,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                           setIsCreating(true);
                           resetProjectForm();
                         }}
-                        className="w-full bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3"
+                        className="w-full bg-gradient-to-r from-violet-600 to-emerald-600 hover:from-violet-500 hover:to-emerald-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3"
                       >
                         <FaPlus />
                         Add New Project
@@ -727,7 +727,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               type="text"
                               value={projectForm.title}
                               onChange={(e) => setProjectForm({ ...projectForm, title: e.target.value })}
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               placeholder="Project title"
                             />
                           </div>
@@ -737,7 +737,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               type="text"
                               value={projectForm.tags}
                               onChange={(e) => setProjectForm({ ...projectForm, tags: e.target.value })}
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               placeholder="React, Next.js, TailwindCSS"
                             />
                           </div>
@@ -747,7 +747,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               value={projectForm.description}
                               onChange={(e) => setProjectForm({ ...projectForm, description: e.target.value })}
                               rows="3"
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               placeholder="Project description"
                             />
                           </div>
@@ -758,7 +758,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                                 type="file"
                                 accept="image/*"
                                 onChange={handleProjectImageUpload}
-                                className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-cyan-600 file:text-white hover:file:bg-cyan-500 file:cursor-pointer focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                                className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-violet-600 file:text-white hover:file:bg-violet-500 file:cursor-pointer focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               />
                               {projectForm.image_url && (
                                 <div className="flex items-center gap-2">
@@ -766,7 +766,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                                   <span className="text-sm text-slate-400 break-all">{projectForm.image_url}</span>
                                 </div>
                               )}
-                              {uploadingFile && <p className="text-sm text-cyan-400">Uploading...</p>}
+                              {uploadingFile && <p className="text-sm text-violet-400">Uploading...</p>}
                             </div>
                           </div>
                           <div>
@@ -775,7 +775,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               type="text"
                               value={projectForm.demo_url}
                               onChange={(e) => setProjectForm({ ...projectForm, demo_url: e.target.value })}
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               placeholder="https://..."
                             />
                           </div>
@@ -785,7 +785,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               type="text"
                               value={projectForm.github_url}
                               onChange={(e) => setProjectForm({ ...projectForm, github_url: e.target.value })}
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               placeholder="https://github.com/..."
                             />
                           </div>
@@ -795,7 +795,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                                 type="checkbox"
                                 checked={projectForm.featured}
                                 onChange={(e) => setProjectForm({ ...projectForm, featured: e.target.checked })}
-                                className="w-5 h-5 text-cyan-600 bg-slate-900 border-slate-600 rounded focus:ring-2 focus:ring-cyan-400/20"
+                                className="w-5 h-5 text-violet-600 bg-slate-900 border-slate-600 rounded focus:ring-2 focus:ring-violet-400/20"
                               />
                               <span>Featured Project</span>
                               <FaStar className="text-yellow-400" />
@@ -805,7 +805,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                         <div className="flex gap-4 mt-6">
                           <button
                             onClick={isCreating ? createProject : updateProject}
-                            className="flex-1 bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3"
+                            className="flex-1 bg-gradient-to-r from-violet-600 to-emerald-600 hover:from-violet-500 hover:to-emerald-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3"
                           >
                             <FaSave />
                             {isCreating ? 'Create Project' : 'Update Project'}
@@ -827,7 +827,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                     {/* Projects List */}
                     <div className="grid grid-cols-1 gap-4">
                       {projects.map(project => (
-                        <div key={project.id} className="bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-cyan-400/50 transition-all duration-300">
+                        <div key={project.id} className="bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-violet-400/50 transition-all duration-300">
                           <div className="flex gap-6">
                             <img
                               src={project.image_url}
@@ -863,19 +863,19 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               </div>
                               <div className="flex flex-wrap gap-2 mt-3">
                                 {Array.isArray(project.tags) && project.tags.map((tag, idx) => (
-                                  <span key={idx} className="px-3 py-1 bg-cyan-600/20 text-cyan-400 rounded-full text-sm">
+                                  <span key={idx} className="px-3 py-1 bg-violet-600/20 text-violet-400 rounded-full text-sm">
                                     {tag}
                                   </span>
                                 ))}
                               </div>
                               <div className="flex gap-4 mt-3 text-sm text-slate-400">
                                 {project.demo_url && (
-                                  <a href={project.demo_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-cyan-400">
+                                  <a href={project.demo_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-violet-400">
                                     <FaLink /> Demo
                                   </a>
                                 )}
                                 {project.github_url && (
-                                  <a href={project.github_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-cyan-400">
+                                  <a href={project.github_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-violet-400">
                                     <FaLink /> GitHub
                                   </a>
                                 )}
@@ -898,7 +898,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                           setIsCreating(true);
                           resetGalleryForm();
                         }}
-                        className="w-full bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3"
+                        className="w-full bg-gradient-to-r from-violet-600 to-emerald-600 hover:from-violet-500 hover:to-emerald-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3"
                       >
                         <FaPlus />
                         Add New Activity
@@ -919,7 +919,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               required
                               value={galleryForm.title}
                               onChange={(e) => setGalleryForm({ ...galleryForm, title: e.target.value })}
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                             />
                           </div>
                           <div>
@@ -929,7 +929,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               required
                               value={galleryForm.date}
                               onChange={(e) => setGalleryForm({ ...galleryForm, date: e.target.value })}
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                             />
                           </div>
                           <div>
@@ -937,7 +937,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                             <select
                               value={galleryForm.type}
                               onChange={(e) => setGalleryForm({ ...galleryForm, type: e.target.value })}
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                             >
                               <option value="image">Image</option>
                               <option value="video">Video</option>
@@ -953,11 +953,11 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                                 multiple
                                 accept={galleryForm.type === 'video' ? "video/*" : "image/*"}
                                 onChange={handleGalleryMediaUpload}
-                                className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-cyan-600 file:text-white hover:file:bg-cyan-500 file:cursor-pointer focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                                className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-violet-600 file:text-white hover:file:bg-violet-500 file:cursor-pointer focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               />
                               <p className="text-xs text-slate-500">You can select multiple files to create a carousel.</p>
 
-                              {uploadingFile && <div className="text-sm text-cyan-400 animate-pulse">Uploading... Please wait.</div>}
+                              {uploadingFile && <div className="text-sm text-violet-400 animate-pulse">Uploading... Please wait.</div>}
 
                               {/* Manual URL Input (Fallback) */}
                               <div className="flex gap-2">
@@ -965,7 +965,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                                   type="url"
                                   placeholder="Add URL manually..."
                                   id="manual-url-input"
-                                  className="flex-1 px-4 py-2 bg-slate-900 border border-slate-600 rounded-lg text-sm text-slate-300 focus:border-cyan-400"
+                                  className="flex-1 px-4 py-2 bg-slate-900 border border-slate-600 rounded-lg text-sm text-slate-300 focus:border-violet-400"
                                 />
                                 <button
                                   type="button"
@@ -1029,7 +1029,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               value={galleryForm.description}
                               onChange={(e) => setGalleryForm({ ...galleryForm, description: e.target.value })}
                               rows="3"
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                             />
                           </div>
                         </div>
@@ -1037,7 +1037,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                           <button
                             onClick={isCreating ? createGallery : updateGallery}
                             disabled={uploadingFile}
-                            className={`flex-1 bg-gradient-to-r from-cyan-600 to-emerald-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 ${uploadingFile ? 'opacity-50 cursor-not-allowed' : 'hover:from-cyan-500 hover:to-emerald-500'}`}
+                            className={`flex-1 bg-gradient-to-r from-violet-600 to-emerald-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 ${uploadingFile ? 'opacity-50 cursor-not-allowed' : 'hover:from-violet-500 hover:to-emerald-500'}`}
                           >
                             <FaSave />
                             {uploadingFile ? 'Uploading Media...' : (isCreating ? 'Create Activity' : 'Update Activity')}
@@ -1059,7 +1059,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                     {/* Gallery List */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {gallery.map(item => (
-                        <div key={item.id} className="bg-slate-800 rounded-2xl p-4 border border-slate-700 hover:border-cyan-400/50 transition-all duration-300 group">
+                        <div key={item.id} className="bg-slate-800 rounded-2xl p-4 border border-slate-700 hover:border-violet-400/50 transition-all duration-300 group">
                           <div className="aspect-video rounded-xl bg-slate-900 overflow-hidden mb-3 relative">
                             <img src={item.media_url} alt={item.title} className="w-full h-full object-cover" onError={(e) => e.target.src = 'https://via.placeholder.com/400x300?text=No+Media'} />
                             <div className="absolute top-2 right-2 px-2 py-1 bg-black/60 backdrop-blur-md rounded text-xs text-white capitalize">
@@ -1092,7 +1092,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                           setIsCreating(true);
                           resetCertificateForm();
                         }}
-                        className="w-full bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3"
+                        className="w-full bg-gradient-to-r from-violet-600 to-emerald-600 hover:from-violet-500 hover:to-emerald-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3"
                       >
                         <FaPlus />
                         Add New Certificate
@@ -1112,7 +1112,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               type="text"
                               value={certificateForm.title}
                               onChange={(e) => setCertificateForm({ ...certificateForm, title: e.target.value })}
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               placeholder="Certificate title"
                             />
                           </div>
@@ -1122,7 +1122,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               type="text"
                               value={certificateForm.issuer}
                               onChange={(e) => setCertificateForm({ ...certificateForm, issuer: e.target.value })}
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               placeholder="Issuing organization"
                             />
                           </div>
@@ -1132,7 +1132,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               type="date"
                               value={certificateForm.issue_date}
                               onChange={(e) => setCertificateForm({ ...certificateForm, issue_date: e.target.value })}
-                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                              className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                             />
                           </div>
                           <div>
@@ -1142,16 +1142,16 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                                 type="file"
                                 accept="application/pdf"
                                 onChange={handleCertificatePdfUpload}
-                                className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-cyan-600 file:text-white hover:file:bg-cyan-500 file:cursor-pointer focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                                className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-violet-600 file:text-white hover:file:bg-violet-500 file:cursor-pointer focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               />
                               {certificateForm.credential_url && (
                                 <div className="flex items-center gap-2">
-                                  <a href={certificateForm.credential_url} target="_blank" rel="noopener noreferrer" className="text-sm text-cyan-400 hover:underline break-all">
+                                  <a href={certificateForm.credential_url} target="_blank" rel="noopener noreferrer" className="text-sm text-violet-400 hover:underline break-all">
                                     📄 {certificateForm.credential_url}
                                   </a>
                                 </div>
                               )}
-                              {uploadingFile && <p className="text-sm text-cyan-400">Uploading PDF...</p>}
+                              {uploadingFile && <p className="text-sm text-violet-400">Uploading PDF...</p>}
                             </div>
                           </div>
                           <div className="md:col-span-2">
@@ -1161,7 +1161,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                                 type="file"
                                 accept="image/*"
                                 onChange={handleCertificateImageUpload}
-                                className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-cyan-600 file:text-white hover:file:bg-cyan-500 file:cursor-pointer focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
+                                className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-xl text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-violet-600 file:text-white hover:file:bg-violet-500 file:cursor-pointer focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20"
                               />
                               {certificateForm.image_url && (
                                 <div className="flex items-center gap-2">
@@ -1169,14 +1169,14 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                                   <span className="text-sm text-slate-400 break-all">{certificateForm.image_url}</span>
                                 </div>
                               )}
-                              {uploadingFile && <p className="text-sm text-cyan-400">Uploading image...</p>}
+                              {uploadingFile && <p className="text-sm text-violet-400">Uploading image...</p>}
                             </div>
                           </div>
                         </div>
                         <div className="flex gap-4 mt-6">
                           <button
                             onClick={isCreating ? createCertificate : updateCertificate}
-                            className="flex-1 bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3"
+                            className="flex-1 bg-gradient-to-r from-violet-600 to-emerald-600 hover:from-violet-500 hover:to-emerald-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3"
                           >
                             <FaSave />
                             {isCreating ? 'Create Certificate' : 'Update Certificate'}
@@ -1198,11 +1198,11 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                     {/* Certificates List */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {certificates.map(cert => (
-                        <div key={cert.id} className="bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-cyan-400/50 transition-all duration-300">
+                        <div key={cert.id} className="bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-violet-400/50 transition-all duration-300">
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex-1">
                               <h3 className="text-lg font-bold text-white">{cert.title}</h3>
-                              <p className="text-cyan-400 text-sm mt-1">{cert.issuer}</p>
+                              <p className="text-violet-400 text-sm mt-1">{cert.issuer}</p>
                               <p className="text-slate-400 text-sm mt-1 flex items-center gap-2">
                                 <FaCalendar />
                                 {new Date(cert.issue_date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
@@ -1230,7 +1230,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                               href={cert.credential_url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-sm text-slate-400 hover:text-cyan-400 flex items-center gap-1 mt-2"
+                              className="text-sm text-slate-400 hover:text-violet-400 flex items-center gap-1 mt-2"
                             >
                               <FaLink /> View Certificate
                             </a>
@@ -1246,18 +1246,18 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                   <div className="space-y-4">
                     {messages.map(msg => (
                       <div key={msg.id} className={`bg-slate-800 rounded-2xl p-6 border transition-all duration-300 ${msg.status === 'unread'
-                        ? 'border-cyan-400 bg-cyan-900/10'
+                        ? 'border-violet-400 bg-violet-900/10'
                         : 'border-slate-700'
                         }`}>
                         <div className="flex items-start justify-between mb-3">
                           <div className="flex-1">
                             <div className="flex items-center gap-3 mb-2">
                               <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                                <FaUser className="text-cyan-400" />
+                                <FaUser className="text-violet-400" />
                                 {msg.name}
                               </h3>
                               {msg.status === 'unread' && (
-                                <span className="px-3 py-1 bg-cyan-600 text-white text-xs rounded-full">NEW</span>
+                                <span className="px-3 py-1 bg-violet-600 text-white text-xs rounded-full">NEW</span>
                               )}
                             </div>
                             <p className="text-slate-400 text-sm mb-2">{msg.email}</p>
@@ -1303,13 +1303,13 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                       <div
                         key={comment.id}
                         className={`rounded-2xl p-6 border transition-all duration-300 ${comment.is_pinned
-                          ? 'bg-gradient-to-br from-cyan-900/30 to-blue-900/30 border-cyan-400/50 shadow-lg'
-                          : 'bg-slate-800 border-slate-700 hover:border-cyan-400/50'
+                          ? 'bg-gradient-to-br from-violet-900/30 to-blue-900/30 border-violet-400/50 shadow-lg'
+                          : 'bg-slate-800 border-slate-700 hover:border-violet-400/50'
                           }`}
                       >
                         {/* Pin Indicator */}
                         {comment.is_pinned && (
-                          <div className="mb-3 flex items-center gap-2 text-cyan-400">
+                          <div className="mb-3 flex items-center gap-2 text-violet-400">
                             <FaThumbtack className="w-5 h-5" />
                             <span className="text-sm font-semibold">Pinned Comment</span>
                           </div>
@@ -1317,7 +1317,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
 
                         <div className="flex gap-4">
                           <img
-                            src={comment.photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(comment.name)}&background=00ffdc&color=000754&size=100`}
+                            src={comment.photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(comment.name)}&background=00ffd0&color=000754&size=100`}
                             alt={comment.name}
                             className="w-12 h-12 rounded-full object-cover border-2 border-slate-600"
                           />
@@ -1334,7 +1334,7 @@ const AdminDashboard = ({ isOpen, onClose }) => {
                                 <button
                                   onClick={() => togglePinComment(comment.id, comment.is_pinned)}
                                   className={`p-2 rounded-lg transition-colors duration-300 ${comment.is_pinned
-                                    ? 'bg-cyan-600 hover:bg-cyan-500 text-white'
+                                    ? 'bg-violet-600 hover:bg-violet-500 text-white'
                                     : 'bg-slate-700 hover:bg-slate-600 text-slate-300'
                                     }`}
                                   title={comment.is_pinned ? 'Unpin comment' : 'Pin comment'}

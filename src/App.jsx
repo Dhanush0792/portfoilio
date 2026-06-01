@@ -22,12 +22,12 @@ function App() {
           {/* Global Background Animation */}
           <div className="fixed inset-0 z-0">
             <Squares
-              speed={0.2}
-              squareSize={35}
-              borderColor={theme === 'dark' ? "rgba(255, 255, 255, 0.03)" : "rgba(15, 23, 42, 0.05)"}
-              hoverFillColor={theme === 'dark' ? "rgba(31, 137, 187, 0.53)" : "rgba(8, 145, 178, 0.1)"}
-              gradientColorStart={theme === 'dark' ? "#000428" : "#f1f5f9"}
-              gradientColorEnd={theme === 'dark' ? "#002545ff" : "#e2e8f0"}
+              speed={0.25}
+              squareSize={38}
+              borderColor={theme === 'dark' ? "rgba(167, 139, 250, 0.04)" : "rgba(15, 23, 42, 0.05)"}
+              hoverFillColor={theme === 'dark' ? "rgba(0, 255, 208, 0.12)" : "rgba(139, 92, 246, 0.08)"}
+              gradientColorStart={theme === 'dark' ? "#060312" : "#f8fafc"}
+              gradientColorEnd={theme === 'dark' ? "#14072b" : "#f1f5f9"}
             />
           </div>
 

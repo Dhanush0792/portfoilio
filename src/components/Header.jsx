@@ -112,10 +112,10 @@ const Header = () => {
         <a
           href={href}
           onClick={(e) => handleNavClick(e, href)}
-          className={`relative block dark:text-white text-slate-700 font-[Rubik] font-bold text-base tracking-wider py-2 transition-transform duration-300 hover:scale-110 group ${isActive ? 'text-cyan-500 dark:text-cyan-400' : ''}`}
+          className={`relative block dark:text-white text-slate-700 font-[Rubik] font-bold text-base tracking-wider py-2 transition-transform duration-300 hover:scale-110 group ${isActive ? 'text-violet-500 dark:text-violet-400' : ''}`}
         >
           {children}
-          <span className={`absolute bottom-1 left-0 block h-[2px] w-0 dark:bg-[#00ffdc] bg-cyan-600 transition-all duration-500 group-hover:w-full ${isActive ? 'w-full' : ''}`}></span>
+          <span className={`absolute bottom-1 left-0 block h-[2px] w-0 dark:bg-[#00ffd0] bg-violet-600 transition-all duration-500 group-hover:w-full ${isActive ? 'w-full' : ''}`}></span>
         </a>
       </li>
     );
@@ -141,11 +141,11 @@ const Header = () => {
                   height: '85px',
                   WebkitClipPath: isMenuOpen ? 'none' : CLIP_PATH,
                   clipPath: isMenuOpen ? 'none' : CLIP_PATH,
-                  background: 'linear-gradient(90deg, #00fff0, #00ffdc, #4079ff, #40ffaa, #00fff0)',
+                  background: 'linear-gradient(90deg, #8b5cf6, #00ffd0, #a78bfa, #8b5cf6)',
                   backgroundSize: '300% 100%',
                   animation: 'gradientShadowMove 6s linear infinite',
                   opacity: isScrolled ? 0 : 1,
-                  filter: 'drop-shadow(0 16px 24px rgba(64,255,170,0.35))',
+                  filter: 'drop-shadow(0 16px 24px rgba(139,92,246,0.35))',
                 }}
               ></div>
             ) : (
@@ -156,11 +156,11 @@ const Header = () => {
                   height: '85px',
                   WebkitClipPath: isMenuOpen ? 'none' : CLIP_PATH,
                   clipPath: isMenuOpen ? 'none' : CLIP_PATH,
-                  background: 'linear-gradient(90deg, #0891b2, #06b6d4, #0891b2, #06b6d4, #0891b2)',
+                  background: 'linear-gradient(90deg, #6d28d9, #8b5cf6, #6d28d9, #8b5cf6, #6d28d9)',
                   backgroundSize: '300% 100%',
                   animation: 'gradientShadowMove 6s linear infinite',
                   opacity: isScrolled ? 0 : 1,
-                  filter: 'drop-shadow(0 8px 16px rgba(8,145,178,0.25))',
+                  filter: 'drop-shadow(0 8px 16px rgba(109,40,217,0.25))',
                 }}
               ></div>
             )}
@@ -186,18 +186,18 @@ const Header = () => {
                 <div className="w-full flex items-center justify-between md:hidden">
                   {/* Mobile: Brand Logo & Text (Left) */}
                   <a href="/" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center gap-3">
-                    <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white font-moderniz font-bold text-lg shadow-md">
+                    <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 text-white font-moderniz font-bold text-lg shadow-md">
                       DS
                     </div>
                     <div>
-                      <h1 className="font-moderniz text-sm dark:text-[#00ffdc] text-slate-800 whitespace-nowrap">Dhanush Siddilingam</h1>
-                      <p className="font-moderniz text-[9px] dark:text-[#00ffdc] text-slate-600" style={{ textShadow: 'none' }}>
+                      <h1 className="font-moderniz text-sm dark:text-[#00ffd0] text-slate-800 whitespace-nowrap">Dhanush Siddilingam</h1>
+                      <p className="font-moderniz text-[9px] dark:text-[#00ffd0] text-slate-600" style={{ textShadow: 'none' }}>
                         Level 5 AI Product Architect
                       </p>
                     </div>
                   </a>
                   {/* Mobile: Hamburger Button (Right) */}
-                  <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="dark:text-[#00ffdc] text-slate-800 text-3xl pointer-events-auto">
+                  <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="dark:text-[#00ffd0] text-slate-800 text-3xl pointer-events-auto">
                     &#9776;
                   </button>
                 </div>
@@ -216,12 +216,12 @@ const Header = () => {
                     onClick={(e) => handleNavClick(e, '#home')}
                     className="justify-self-center flex items-center gap-3"
                   >
-                    <div className="h-11 w-11 flex items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white font-moderniz font-bold text-xl shadow-lg border border-cyan-400/20">
+                    <div className="h-11 w-11 flex items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 text-white font-moderniz font-bold text-xl shadow-lg border border-violet-400/20">
                       DS
                     </div>
                     <div className="block">
-                      <h1 className="font-moderniz text-base dark:text-[#00ffdc] text-slate-800">Dhanush Siddilingam</h1>
-                      <p className="font-moderniz text-[10px] dark:text-[#00ffdc] text-slate-600" style={{ textShadow: 'none' }}>
+                      <h1 className="font-moderniz text-base dark:text-[#00ffd0] text-slate-800">Dhanush Siddilingam</h1>
+                      <p className="font-moderniz text-[10px] dark:text-[#00ffd0] text-slate-600" style={{ textShadow: 'none' }}>
                         Level 5 AI Product Architect
                       </p>
                     </div>
@@ -239,7 +239,7 @@ const Header = () => {
                     </ul>
                     <button
                       onClick={handleAdminAccess}
-                      className="flex items-center gap-2 dark:text-slate-400 text-slate-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300 pointer-events-auto"
+                      className="flex items-center gap-2 dark:text-slate-400 text-slate-500 hover:text-violet-600 dark:hover:text-violet-400 transition-colors duration-300 pointer-events-auto"
                       title={isAuthenticated ? "Admin Dashboard" : "Admin Login"}
                     >
                       <FaShieldAlt className={`text-lg ${isAuthenticated ? 'text-green-500' : 'currentColor'}`} />
@@ -268,8 +268,8 @@ const Header = () => {
         ]}
         displaySocials={true}
         displayItemNumbering={true}
-        colors={['#0891b2', '#06b6d4', '#155e75']} // Cyan palette
-        accentColor="#06b6d4"
+        colors={['#6d28d9', '#8b5cf6', '#a78bfa']} // Violet/indigo palette
+        accentColor="#8b5cf6"
       />
 
       {/* Admin Login Modal */}
