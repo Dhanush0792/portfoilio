@@ -197,7 +197,7 @@ const Home = () => {
 
                 <div className="max-w-4xl mx-auto px-4">
                     <div className="relative border-l-2 border-violet-500/30 pl-8 ml-4 md:ml-6 space-y-12">
-                        {/* Timeline Node 1 */}
+                        {/* B.Tech */}
                         <motion.div 
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -205,21 +205,20 @@ const Home = () => {
                             transition={{ duration: 0.5 }}
                             className="relative"
                         >
-                            {/* Glowing Dot */}
                             <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#00ffd0] border-4 border-[#080414] shadow-[0_0_12px_#00ffd0]"></div>
                             
                             <div className="p-6 rounded-2xl bg-violet-950/10 border border-violet-500/20 backdrop-blur-sm">
                                 <span className="text-xs font-bold px-3 py-1 rounded-full bg-violet-500/20 text-[#00ffd0] border border-violet-500/30">2022 - 2026</span>
                                 <h3 className="text-xl font-bold text-white mt-4 font-moderniz">Bachelor of Technology (B.Tech)</h3>
                                 <p className="text-violet-400 font-semibold mt-1">Electronics and Communication Engineering (ECE)</p>
-                                <p className="text-slate-300 mt-2 font-cascadia text-sm">Sri Venkateswara College of Engineering (SVCE)</p>
+                                <p className="text-slate-300 mt-2 font-cascadia text-sm">Sri Venkateswara College of Engineering (SVCE), Tirupati</p>
                                 <div className="mt-4 flex items-center gap-2 text-xs font-bold text-[#00ffd0]">
-                                    <span>CGPA: 8.83</span>
+                                    <span>CGPA: 8.83 / 10</span>
                                 </div>
                             </div>
                         </motion.div>
 
-                        {/* Timeline Node 2 */}
+                        {/* Azure Internship */}
                         <motion.div 
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -227,7 +226,6 @@ const Home = () => {
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="relative"
                         >
-                            {/* Glowing Dot */}
                             <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-violet-500 border-4 border-[#080414] shadow-[0_0_12px_#8b5cf6]"></div>
                             
                             <div className="p-6 rounded-2xl bg-violet-950/10 border border-violet-500/20 backdrop-blur-sm">
@@ -235,6 +233,48 @@ const Home = () => {
                                 <h3 className="text-xl font-bold text-white mt-4 font-moderniz">Azure AI Model Evaluation</h3>
                                 <p className="text-violet-400 font-semibold mt-1">Microsoft AI Model Evaluation Internship</p>
                                 <p className="text-slate-300 mt-2 font-cascadia text-sm">Worked on evaluation frameworks and metrics configuration for large language models.</p>
+                            </div>
+                        </motion.div>
+
+                        {/* Class XII */}
+                        <motion.div 
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="relative"
+                        >
+                            <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#00ffd0] border-4 border-[#080414] shadow-[0_0_12px_#00ffd0]"></div>
+                            
+                            <div className="p-6 rounded-2xl bg-violet-950/10 border border-violet-500/20 backdrop-blur-sm">
+                                <span className="text-xs font-bold px-3 py-1 rounded-full bg-violet-500/20 text-[#00ffd0] border border-violet-500/30">2020 - 2022</span>
+                                <h3 className="text-xl font-bold text-white mt-4 font-moderniz">Intermediate (Class XII)</h3>
+                                <p className="text-violet-400 font-semibold mt-1">MPC Stream</p>
+                                <p className="text-slate-300 mt-2 font-cascadia text-sm">Gurudeva Vasistah Junior College, Kodur</p>
+                                <div className="mt-4 flex items-center gap-2 text-xs font-bold text-[#00ffd0]">
+                                    <span>Percentage: 87.6%</span>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Class X */}
+                        <motion.div 
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                            className="relative"
+                        >
+                            <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-violet-500 border-4 border-[#080414] shadow-[0_0_12px_#8b5cf6]"></div>
+                            
+                            <div className="p-6 rounded-2xl bg-violet-950/10 border border-violet-500/20 backdrop-blur-sm">
+                                <span className="text-xs font-bold px-3 py-1 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30">Passing Year: 2020</span>
+                                <h3 className="text-xl font-bold text-white mt-4 font-moderniz">SSC (Class X)</h3>
+                                <p className="text-violet-400 font-semibold mt-1">Secondary School Certificate</p>
+                                <p className="text-slate-300 mt-2 font-cascadia text-sm">Silver Bells English Medium High School, Kodur</p>
+                                <div className="mt-4 flex items-center gap-2 text-xs font-bold text-[#00ffd0]">
+                                    <span>CGPA: 10 / 10</span>
+                                </div>
                             </div>
                         </motion.div>
                     </div>
