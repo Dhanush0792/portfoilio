@@ -100,10 +100,11 @@ function useCardTexture(photoUrl) {
       ctx.font = 'bold 90px "Courier New", Courier, monospace';
       ctx.fillText('DS SYSTEM v1.0', 512, 970);
 
-      // Generate Three.js texture
+      // Generate Three.js texture with correct UV wrapping and mirroring
       const tex = new THREE.CanvasTexture(canvas);
-      tex.wrapS = THREE.ClampToEdgeWrapping;
-      tex.wrapT = THREE.ClampToEdgeWrapping;
+      tex.wrapS = THREE.RepeatWrapping;
+      tex.repeat.x = -1; // Mirror horizontally to read text correctly left-to-right
+      tex.flipY = false;  // Flip vertically to align with GLTF model coordinates
       tex.needsUpdate = true;
       setTexture(tex);
     };
