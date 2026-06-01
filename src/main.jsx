@@ -1,35 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 import { ThemeProvider } from './contexts/ThemeContext';
-import Preloader from './components/Preloader.jsx';
 import './index.css';
 
-const Main = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handlePreloaderFinished = () => {
-    setIsLoading(false);
-  };
-
-  return (
-    <>
-      {isLoading ? (
-        <Preloader onFinished={handlePreloaderFinished} />
-      ) : (
-        <App />
-      )}
-    </>
-  );
-};
-
-// Render komponen Main ke dalam DOM
+// Render komponen App ke dalam DOM langsung tanpa preloader
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider>
-        <Main />
+        <App />
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
