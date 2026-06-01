@@ -175,9 +175,8 @@ const Home = () => {
                                     <h3 className="text-sm font-semibold uppercase tracking-wider dark:text-slate-400 text-slate-500 group-hover:text-violet-700 dark:group-hover:text-slate-300 transition-colors duration-300">{stat.title}</h3>
                                     <p className="text-xs dark:text-slate-500 text-slate-400 mt-1">{stat.description}</p>
                                 </div>
-                                <div className="flex flex-col items-end">
+                                <div className="flex flex-col items-end justify-center">
                                     <p className="text-5xl font-bold dark:text-white text-slate-900 transition-all duration-300 group-hover:text-violet-600 dark:group-hover:text-violet-300">{stat.value}</p>
-                                    <FaArrowRight className="text-slate-400 mt-auto group-hover:text-violet-500 transition-all duration-300 -rotate-45" />
                                 </div>
                             </div>
                         </div>
