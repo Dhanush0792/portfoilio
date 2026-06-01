@@ -205,8 +205,9 @@ const Header = () => {
                 {/* --- DESKTOP HEADER --- */}
                 <div className="hidden w-full md:grid grid-cols-3 items-center px-8 relative min-h-[48px]">
                   {/* Desktop: Left Navigation (Start) */}
-                  <ul className="justify-self-start flex items-center list-none gap-8 lg:gap-10">
+                  <ul className="justify-self-start flex items-center list-none gap-6 lg:gap-8">
                     <NavLink href="#home">Home</NavLink>
+                    <NavLink href="#education">Education</NavLink>
                     <NavLink href="#projects">Project</NavLink>
                   </ul>
 
@@ -259,6 +260,7 @@ const Header = () => {
         onMenuClose={() => setIsMenuOpen(false)}
         items={[
           { label: 'Home', link: '#home', onClick: (e) => handleNavClick(e, '#home') },
+          { label: 'Education', link: '#education', onClick: (e) => handleNavClick(e, '#education') },
           { label: 'Project', link: '#projects', onClick: (e) => handleNavClick(e, '#projects') },
           { label: 'About', link: '#about', onClick: (e) => handleNavClick(e, '#about') },
           { label: 'Contact', link: '#contact', onClick: (e) => handleNavClick(e, '#contact') },

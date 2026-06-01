@@ -185,6 +185,62 @@ const Home = () => {
                 </motion.div>
             </section>
 
+            <section id="education" className="py-12 md:py-18 pt-20">
+                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.6, ease: "easeOut" }} className="text-center mb-12">
+                    <h2 className="text-4xl font-bold dark:text-white text-slate-900 font-moderniz" style={{ textShadow: theme === 'dark' ? "2px 2px 0 #0c002b, 4px 4px 0 #6d28d9, 0 4px 12px rgba(0, 255, 208, 0.6), 0 1px 0 #00ffd0" : "none" }}>
+                        ACADEMIC <span className="text-[#00ffd0]">CREDENTIALS</span>
+                    </h2>
+                    <p className="text-lg dark:text-violet-300 text-slate-600 mt-2 font-cascadia">
+                        ✧ Formal training and certifications logging ✧
+                    </p>
+                </motion.div>
+
+                <div className="max-w-4xl mx-auto px-4">
+                    <div className="relative border-l-2 border-violet-500/30 pl-8 ml-4 md:ml-6 space-y-12">
+                        {/* Timeline Node 1 */}
+                        <motion.div 
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="relative"
+                        >
+                            {/* Glowing Dot */}
+                            <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#00ffd0] border-4 border-[#080414] shadow-[0_0_12px_#00ffd0]"></div>
+                            
+                            <div className="p-6 rounded-2xl bg-violet-950/10 border border-violet-500/20 backdrop-blur-sm">
+                                <span className="text-xs font-bold px-3 py-1 rounded-full bg-violet-500/20 text-[#00ffd0] border border-violet-500/30">2022 - 2026</span>
+                                <h3 className="text-xl font-bold text-white mt-4 font-moderniz">Bachelor of Technology (B.Tech)</h3>
+                                <p className="text-violet-400 font-semibold mt-1">Electronics and Communication Engineering (ECE)</p>
+                                <p className="text-slate-300 mt-2 font-cascadia text-sm">Sri Venkateswara College of Engineering (SVCE)</p>
+                                <div className="mt-4 flex items-center gap-2 text-xs font-bold text-[#00ffd0]">
+                                    <span>CGPA: 8.83</span>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Timeline Node 2 */}
+                        <motion.div 
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="relative"
+                        >
+                            {/* Glowing Dot */}
+                            <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-violet-500 border-4 border-[#080414] shadow-[0_0_12px_#8b5cf6]"></div>
+                            
+                            <div className="p-6 rounded-2xl bg-violet-950/10 border border-violet-500/20 backdrop-blur-sm">
+                                <span className="text-xs font-bold px-3 py-1 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30">2024</span>
+                                <h3 className="text-xl font-bold text-white mt-4 font-moderniz">Azure AI Model Evaluation</h3>
+                                <p className="text-violet-400 font-semibold mt-1">Microsoft AI Model Evaluation Internship</p>
+                                <p className="text-slate-300 mt-2 font-cascadia text-sm">Worked on evaluation frameworks and metrics configuration for large language models.</p>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
             <section id="projects" className="md:py-18">
                 <ProjectSection />
             </section>
